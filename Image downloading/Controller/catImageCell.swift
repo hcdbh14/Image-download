@@ -1,21 +1,22 @@
 import UIKit
 
-class CatCell: UITableViewCell {
-    let VM = MainModel()
+class CatCell: UITableViewCell, ModelDelegate {
+    let viewModel = MainModel()
     @IBOutlet weak var catImage: UIImageView!
     
-    
+     
     func callRandomImageUrl() {
+        viewModel.delegate = self
         DispatchQueue.global().async {
-            self.VM.callService()
+            self.viewModel.callService()
         }
-        catImage.load(url: URL(string: "https://purr.objects-us-east-1.dream.io/i/imag1178.jpg")!)
+    }
+    
+    func didReceiveImageUrl(_ data: String) {
+        self.catImage.load(url: URL(string: data)!)
     }
 }
 
-private func callCatImage() {
-    
-}
 
 
 

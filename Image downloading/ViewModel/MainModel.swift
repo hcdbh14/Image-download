@@ -2,8 +2,10 @@ import Foundation
 
 class MainModel {
     var randomCatUrl: String?
+    weak var delegate: ModelDelegate?
     
     func callService() {
+        
         let Request: NetworkingManager
         Request = NetworkingManager.init(endpoint: "https://aws.random.cat/meow")
         Request.httpRequest(httpMethod: .get) { result in
@@ -16,7 +18,7 @@ class MainModel {
                 let decoder = JSONDecoder()
                 do {
                     let responseData = try decoder.decode(CatUrl.self, from: response)
-                    self.randomCatUrl = responseData.file
+                    self.delegate?.didReceiveImageUrl(responseData.file)
                 } catch {
                     print("error \(error)")
                 }
@@ -25,3 +27,6 @@ class MainModel {
     }
 }
 
+protocol ModelDelegate: class {
+    func didReceiveImageUrl(_ data: String)
+}
