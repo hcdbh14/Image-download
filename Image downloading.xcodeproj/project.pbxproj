@@ -14,7 +14,7 @@
 		EDAF10DA2413B0DE004CC313 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDAF10D92413B0DE004CC313 /* Assets.xcassets */; };
 		EDAF10DD2413B0DE004CC313 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDAF10DB2413B0DE004CC313 /* LaunchScreen.storyboard */; };
 		EDAF10E52413B1F6004CC313 /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF10E42413B1F6004CC313 /* ImagesViewController.swift */; };
-		EDAF10E72413B7C3004CC313 /* catImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF10E62413B7C3004CC313 /* catImageCell.swift */; };
+		EDAF10E72413B7C3004CC313 /* CatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF10E62413B7C3004CC313 /* CatCell.swift */; };
 		EDAF10E92413B909004CC313 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF10E82413B909004CC313 /* NetworkingManager.swift */; };
 		EDAF10ED2413BA91004CC313 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF10EC2413BA91004CC313 /* MainModel.swift */; };
 		EDAF10F02413BB5A004CC313 /* CatUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF10EF2413BB5A004CC313 /* CatUrl.swift */; };
@@ -30,7 +30,7 @@
 		EDAF10DC2413B0DE004CC313 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDAF10DE2413B0DE004CC313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDAF10E42413B1F6004CC313 /* ImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
-		EDAF10E62413B7C3004CC313 /* catImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = catImageCell.swift; sourceTree = "<group>"; };
+		EDAF10E62413B7C3004CC313 /* CatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCell.swift; sourceTree = "<group>"; };
 		EDAF10E82413B909004CC313 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		EDAF10EC2413BA91004CC313 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		EDAF10EF2413BB5A004CC313 /* CatUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatUrl.swift; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 			children = (
 				EDAF10D42413B0DA004CC313 /* ViewController.swift */,
 				EDAF10E42413B1F6004CC313 /* ImagesViewController.swift */,
-				EDAF10E62413B7C3004CC313 /* catImageCell.swift */,
+				EDAF10E62413B7C3004CC313 /* CatCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -180,7 +180,7 @@
 				EDAF10D52413B0DA004CC313 /* ViewController.swift in Sources */,
 				EDAF10D12413B0DA004CC313 /* AppDelegate.swift in Sources */,
 				EDAF10F02413BB5A004CC313 /* CatUrl.swift in Sources */,
-				EDAF10E72413B7C3004CC313 /* catImageCell.swift in Sources */,
+				EDAF10E72413B7C3004CC313 /* CatCell.swift in Sources */,
 				EDAF10ED2413BA91004CC313 /* MainModel.swift in Sources */,
 				EDAF10E92413B909004CC313 /* NetworkingManager.swift in Sources */,
 				EDAF10E52413B1F6004CC313 /* ImagesViewController.swift in Sources */,
