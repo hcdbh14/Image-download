@@ -1,7 +1,5 @@
 import UIKit
 
-
-
 class ImagesViewController: UITableViewController, ModelDelegate {
     
     private let viewModel = MainModel()
