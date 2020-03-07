@@ -13,6 +13,7 @@
 		EDAF10D82413B0DA004CC313 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDAF10D62413B0DA004CC313 /* Main.storyboard */; };
 		EDAF10DA2413B0DE004CC313 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDAF10D92413B0DE004CC313 /* Assets.xcassets */; };
 		EDAF10DD2413B0DE004CC313 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDAF10DB2413B0DE004CC313 /* LaunchScreen.storyboard */; };
+		EDAF10E52413B1F6004CC313 /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF10E42413B1F6004CC313 /* ImagesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		EDAF10D92413B0DE004CC313 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDAF10DC2413B0DE004CC313 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDAF10DE2413B0DE004CC313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDAF10E42413B1F6004CC313 /* ImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				EDAF10D02413B0DA004CC313 /* AppDelegate.swift */,
 				EDAF10D22413B0DA004CC313 /* SceneDelegate.swift */,
 				EDAF10D42413B0DA004CC313 /* ViewController.swift */,
+				EDAF10E42413B1F6004CC313 /* ImagesViewController.swift */,
 				EDAF10D62413B0DA004CC313 /* Main.storyboard */,
 				EDAF10D92413B0DE004CC313 /* Assets.xcassets */,
 				EDAF10DB2413B0DE004CC313 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				EDAF10D52413B0DA004CC313 /* ViewController.swift in Sources */,
 				EDAF10D12413B0DA004CC313 /* AppDelegate.swift in Sources */,
+				EDAF10E52413B1F6004CC313 /* ImagesViewController.swift in Sources */,
 				EDAF10D32413B0DA004CC313 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
