@@ -1,6 +1,6 @@
 import UIKit
 
-class ImagesViewController: UITableViewController, ModelDelegate {
+class ImagesViewController: UICollectionViewController, ModelDelegate {
     
     private let viewModel = MainModel()
     private var catImages: [UIImage] = []
@@ -14,15 +14,15 @@ class ImagesViewController: UITableViewController, ModelDelegate {
     }
     
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return catImages.count
     }
     
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CatCell") as? CatCell else {
-            return UITableViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CatCell", for: indexPath) as? CatCell else {
+            return UICollectionViewCell()
         }
         cell.catImage.image = catImages[indexPath.row]
         
@@ -45,7 +45,7 @@ class ImagesViewController: UITableViewController, ModelDelegate {
                     DispatchQueue.main.async {
                         
                         self.catImages.append(image)
-                        self.tableView.reloadData()
+                        self.collectionView.reloadData()
                     }
                 }
             }

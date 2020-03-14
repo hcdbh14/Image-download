@@ -1,5 +1,5 @@
 import UIKit
 
-class CatCell: UITableViewCell {
+class CatCell: UICollectionViewCell {
     @IBOutlet weak var catImage: UIImageView!
 }

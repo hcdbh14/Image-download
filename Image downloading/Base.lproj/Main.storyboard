@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +21,7 @@
                                 <state key="normal" title="Get Images"/>
                                 <connections>
                                     <action selector="moveToGetImages:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yca-XZ-zf4"/>
-                                    <segue destination="QaM-SG-Jok" kind="show" identifier="moveToImages" id="775-df-ZDJ"/>
+                                    <segue destination="SEq-2O-Piv" kind="show" identifier="moveToImages" id="lKK-aS-wcB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -35,52 +36,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
+            <point key="canvasLocation" x="-164" y="123"/>
         </scene>
         <!--Images View Controller-->
-        <scene sceneID="WrU-uw-sQV">
+        <scene sceneID="j1P-lb-sJc">
             <objects>
-                <tableViewController id="QaM-SG-Jok" customClass="ImagesViewController" customModule="Image_downloading" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Fj-49-Sqe">
+                <collectionViewController id="SEq-2O-Piv" customClass="ImagesViewController" customModule="Image_downloading" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dsX-sw-qNT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                        <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CatCell" rowHeight="266" id="d8r-96-Bck" customClass="CatCell" customModule="Image_downloading" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="266"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d8r-96-Bck" id="X7t-Af-4QB">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="266"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eco-mP-fnk">
+                            <size key="itemSize" width="177" height="154"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CatCell" id="BtX-2V-oQY" customClass="CatCell" customModule="Image_downloading" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="177" height="154"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2GZ-3O-1As">
+                                    <rect key="frame" x="0.0" y="0.0" width="177" height="154"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PfO-sF-fIa">
-                                            <rect key="frame" x="20" y="43" width="374" height="178"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pqd-bC-eYP">
+                                            <rect key="frame" x="8" y="8" width="161" height="138"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="161" id="qpw-D6-Cug"/>
+                                                <constraint firstAttribute="height" constant="138" id="xwA-JM-kwL"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="PfO-sF-fIa" firstAttribute="leading" secondItem="X7t-Af-4QB" secondAttribute="leadingMargin" id="POq-Sv-ZLd"/>
-                                        <constraint firstItem="PfO-sF-fIa" firstAttribute="centerY" secondItem="X7t-Af-4QB" secondAttribute="centerY" constant="-1" id="h7N-MO-7uK"/>
-                                        <constraint firstItem="PfO-sF-fIa" firstAttribute="centerX" secondItem="X7t-Af-4QB" secondAttribute="centerX" id="i8N-C9-68R"/>
-                                        <constraint firstItem="PfO-sF-fIa" firstAttribute="top" secondItem="X7t-Af-4QB" secondAttribute="topMargin" constant="32" id="wpo-EO-Pxh"/>
+                                        <constraint firstAttribute="trailing" secondItem="Pqd-bC-eYP" secondAttribute="trailing" constant="8" id="8gr-g9-Mm8"/>
+                                        <constraint firstAttribute="bottom" secondItem="Pqd-bC-eYP" secondAttribute="bottom" constant="8" id="NWb-7o-lPi"/>
+                                        <constraint firstItem="Pqd-bC-eYP" firstAttribute="top" secondItem="2GZ-3O-1As" secondAttribute="top" constant="8" id="Y5D-pu-330"/>
+                                        <constraint firstItem="Pqd-bC-eYP" firstAttribute="leading" secondItem="2GZ-3O-1As" secondAttribute="leading" constant="8" id="eJN-1r-nnB"/>
                                     </constraints>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="177" height="154"/>
                                 <connections>
-                                    <outlet property="catImage" destination="PfO-sF-fIa" id="n8W-bR-nkf"/>
+                                    <outlet property="catImage" destination="Pqd-bC-eYP" id="gWM-8Q-eeI"/>
                                 </connections>
-                            </tableViewCell>
-                        </prototypes>
+                            </collectionViewCell>
+                        </cells>
                         <connections>
-                            <outlet property="dataSource" destination="QaM-SG-Jok" id="CG7-4H-NiZ"/>
-                            <outlet property="delegate" destination="QaM-SG-Jok" id="nXQ-LM-GUT"/>
+                            <outlet property="dataSource" destination="SEq-2O-Piv" id="ZbF-ig-8oc"/>
+                            <outlet property="delegate" destination="SEq-2O-Piv" id="ePo-rJ-ZpM"/>
                         </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="lZw-RZ-zgE"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KnQ-xY-l9Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="Ifb-fb-HXt"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WMW-aw-70B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="956.52173913043487" y="115.84821428571428"/>
+            <point key="canvasLocation" x="821.73913043478262" y="122.54464285714285"/>
         </scene>
     </scenes>
 </document>
