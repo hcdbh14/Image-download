@@ -4,12 +4,15 @@ class ImagesViewController: UICollectionViewController, ModelDelegate {
     
     private let viewModel = MainModel()
     private var catImages: [UIImage] = []
+    private var itemIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for _ in 0...10 {
-            self.callRandomImageUrl()
+        DispatchQueue.global().async {
+            for _ in 0...1000 {
+                self.callRandomImageUrl()
+            }
         }
     }
     
@@ -30,25 +33,31 @@ class ImagesViewController: UICollectionViewController, ModelDelegate {
     }
     
     private func callRandomImageUrl() {
-        viewModel.delegate = self
         DispatchQueue.global().async {
+            self.viewModel.delegate = self
             self.viewModel.callService()
         }
     }
     
     internal func didReceiveImageUrl(_ data: String) {
-        guard let url = URL(string: data) else { return }
-        
         DispatchQueue.global().async {
+            guard let url = URL(string: data) else { return }
             if let data = try? Data(contentsOf: url) {
                 if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        
+                    
+                    
+                    if self.catImages.count == 0 {
                         self.catImages.append(image)
-                        self.collectionView.reloadData()
+                        DispatchQueue.main.async { self.collectionView.reloadData() }
+                    } else {
+                        self.catImages.append(image)
+                        let indexPath = IndexPath(item: self.itemIndex, section: 0)
+                        DispatchQueue.main.async { self.collectionView.reloadItems(at: [indexPath]) }
+                        self.itemIndex += 1
                     }
                 }
             }
         }
     }
 }
+
